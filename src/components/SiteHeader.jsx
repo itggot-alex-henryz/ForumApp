@@ -5,8 +5,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Button from '@material-ui/core/Button'
 import SideMenu from './SideMenu'
+import AddIcon from '@material-ui/icons/Add'
+import MoreIcon from '@material-ui/icons/MoreVert'
+
 
 const styles = {
   root: {
@@ -30,18 +32,23 @@ class SiteHeader extends Component {
   render() {
     return (
       <div style={styles.root}>
-      <SideMenu open={this.state.menuOpen}/>
       <AppBar position="static" color='primary'>
         <Toolbar>
           <IconButton style={styles.menuButton} onClick={this.handleClose}>
             <MenuIcon/>
           </IconButton>
           <Typography variant="h6" color="inherit" style={styles.root}>
-            ForumApp
+            Todo-App
           </Typography>
-          <Button color="inherit">Login</Button>
+          <IconButton>
+            <AddIcon/>
+          </IconButton>
+          <IconButton>
+              <MoreIcon/>
+          </IconButton>
         </Toolbar>
       </AppBar>
+      <SideMenu open={this.state.menuOpen}/>
     </div>
     )
   }
