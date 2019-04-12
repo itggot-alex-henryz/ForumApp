@@ -20,10 +20,6 @@ export default class SideMenu extends Component {
 			open: this.props.open
 	}
 
-	handleClose = () => {
-		this.setState({open: false})
-	}
-
 	handleToggle = () => {
 		this.setState({open: !this.state.open})
 	}
@@ -38,11 +34,11 @@ export default class SideMenu extends Component {
   render() {
     return (
       <div>
-				<Drawer open={this.state.open} onClose={this.handleClose} >
+				<Drawer open={this.state.open} onClose={this.handleToggle} >
 				<div
             tabIndex={0}
-						onClick={this.handleClose}
-						onKeyDown={this.handleClose}
+						onClick={this.handleToggle}
+						onKeyDown={this.handleToggle}
           >
 					<List style={styles.fullDrawer}>
 						<a href="#/" style={styles.link}>
