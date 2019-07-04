@@ -3,7 +3,6 @@ import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider'
 
 const styles = {
 	fullDrawer: {
@@ -42,17 +41,13 @@ export default class SideMenu extends Component {
 						onKeyDown={this.handleToggle}
           >
 					<List style={styles.fullDrawer}>
-						<a href="#/" style={styles.link}>
-							<ListItem button key="Home">
+							<ListItem button key="test">
 										<ListItemText primary="Home" />
 							</ListItem>
-						</a>
 						{this.state.listItems.map((text, index) => (
-							<a href={'#'+this.state.listLinks[index]} style={styles.link}>
-								<ListItem button key={text}>
+								<ListItem button key={index}>
 									<ListItemText primary={text} />
 								</ListItem>
-							</a>
 						))}
 					</List>
 					</div>
